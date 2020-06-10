@@ -125,9 +125,10 @@ class DoublyLinkedList:
         value = node.value
         if node is self.head:
             self.remove_from_head()
-
+            self.length -= 1
         else:
             node.delete()
+
         self.add_to_tail(value)
 
     """Removes a node from the list and handles cases where
