@@ -1,3 +1,4 @@
+from queue import Queue
 """
 Binary search trees are a data structure that enforce an ordering over 
 the data they store. That ordering in turn makes it a lot more efficient 
@@ -25,7 +26,7 @@ class BSTNode:
                 self.left = BSTNode(value)
             else:
                 self.left.insert(value)
-        if value > self.value:
+        if value >= self.value:
             if self.right is None:
                 self.right = BSTNode(value)
             else:
@@ -68,22 +69,42 @@ class BSTNode:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+        # lowest number is always the furthest to the left
+        if node is None:
+            return None
+        if node is self:
+            self.in_order_print(self.left)
+            print(node.value)
+            self.in_order_print(self.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
+
     def bft_print(self, node):
         pass
+    # use a queue
+    # start a queue with root node
+
+    # while loop that checks
+    # size of queue
+        # point variable
+        # that updates at the beginning of each loop
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
         pass
+        # use a stack
+        # start stack with root node
+
+        # while loop that checks stack size
+        # pointer
 
     # Stretch Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
+
     def pre_order_dft(self, node):
         pass
 
